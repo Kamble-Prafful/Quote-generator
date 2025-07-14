@@ -26,9 +26,9 @@ async function getQuote() {
   showLoadingSpinner();
 
   //*
-  const proxyUrl = "https://whispering-tor-04671.herokuapp.com/";
+  // const proxyUrl = "https://whispering-tor-04671.herokuapp.com/";
   const apiUrl =
-    "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json";
+    "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json";
 
   try {
     //* We need to use proxy URL to make our API call in order to avoid CORS
