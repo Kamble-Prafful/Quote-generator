@@ -56,12 +56,12 @@ async function getQuote() {
     console.log(error);
     if (retry < 4) getQuote();
     else {
-      ++retry;
       removeLoadingSpinner();
       quoteText.innerText = error?.message
         ? error.message
         : `Coundn't Load the Quote`;
     }
+    ++retry;
   }
 }
 
