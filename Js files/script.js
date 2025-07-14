@@ -26,7 +26,8 @@ async function getQuote() {
   showLoadingSpinner();
 
   //*
-  const proxyUrl = "https://corsproxy.io/?";
+  // const proxyUrl = "https://corsproxy.io/?";
+  const proxyUrl = `https://api.allorigins.win/get?url=`;
   const apiUrl =
     "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json";
   const finalUrl = `${proxyUrl}${encodeURIComponent(apiUrl)}`;
