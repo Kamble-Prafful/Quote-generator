@@ -26,13 +26,14 @@ async function getQuote() {
   showLoadingSpinner();
 
   //*
-  // const proxyUrl = "https://whispering-tor-04671.herokuapp.com/";
+  const proxyUrl = "https://corsproxy.io/?";
   const apiUrl =
     "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json";
+  const finalUrl = `${proxyUrl}${encodeURIComponent(apiUrl)}`;
 
   try {
     //* We need to use proxy URL to make our API call in order to avoid CORS
-    const response = await fetch(apiUrl);
+    const response = await fetch(finalUrl);
     const data = await response.json();
 
     //* Check if author field is blank and replace it with 'Unknown'
