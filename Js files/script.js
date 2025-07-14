@@ -35,7 +35,8 @@ async function getQuote() {
   try {
     //* We need to use proxy URL to make our API call in order to avoid CORS
     const response = await fetch(finalUrl);
-    const data = await response.json();
+    const proxyData = await response.json();
+    const data = JSON.parse(data.contents);
 
     //* Check if author field is blank and replace it with 'Unknown'
     if (data.quoteAuthor === "") {
